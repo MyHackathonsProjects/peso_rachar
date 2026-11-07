@@ -1,5 +1,5 @@
 {
-  "name": "pesorachar-miniapp",
+  "name": "pesosplit-miniapp",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -16,6 +16,8 @@
     "viem": "^2.23.5"
   },
   "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.5.1",
     "tailwindcss": "^3.4.17",

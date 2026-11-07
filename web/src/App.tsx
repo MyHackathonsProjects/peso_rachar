@@ -16,7 +16,7 @@ import {
   ShieldCheck,
   Wallet,
 } from "lucide-react";
-import logo from "../assests/images/peso-logo.png";
+import logo from "./assets/images/peso-logo.png";
 
 
 declare global {
