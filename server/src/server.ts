@@ -4,6 +4,7 @@ import cors from "@fastify/cors";
 import rateLimit from "@fastify/rate-limit";
 import OpenAI from "openai";
 import { z } from "zod";
+import { initializeTelegramWebhook } from './telegramWebhook.js';
 import {
   createPublicClient,
   createWalletClient,
@@ -373,8 +374,45 @@ app.post("/telegram/webhook", async (request: FastifyRequest, reply) => {
     return { ok: true, error: messageText };
   }
 });
-app.get("/", async (request, reply) => {
-  return { message: "PesoRachar Server is running smoothly!" };
+// app.get("/", async (request, reply) => {return { message: "PesoRachar Server is running smoothly!" };});
+app.get('/', async(req, res) => {
+  await initializeTelegramWebhook();
+    res.send(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Peso Racha Server</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    margin: 0;
+                    background-color: #f4f4f9;
+                }
+                .container {
+                    text-align: center;
+                    padding: 20px;
+                    background: white;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                }
+                h1 { color: #333; }
+                p { color: #555; }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h1>Welcome to the Peso Racha Server</h1>
+                <p>The default root route (/) is working perfectly.</p>
+            </div>
+        </body>
+        </html>
+    `);
 });
 
 app.setErrorHandler((error, request, reply) => {
