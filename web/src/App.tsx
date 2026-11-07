@@ -16,7 +16,7 @@ import {
   ShieldCheck,
   Wallet,
 } from "lucide-react";
-import logo from "../assets/images/peso-rachar-logo.png";
+import logo from "../assets/images/logo.png";
 
 
 declare global {
@@ -229,7 +229,7 @@ export default function App() {
       <header className="mb-7 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="flex h-12 w-12 items-center justify-center rounded-2xl ">
-            <img classname="brand-logo" src={logo} alt="" />
+            <img className="brand-logo" src={logo} alt="peso_rachar_logo" />
           </div>
           <div>
             <h1 className="text-lg font-extrabold tracking-tight">{t.title}</h1>
