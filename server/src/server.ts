@@ -375,7 +375,7 @@ app.post("/telegram/webhook", async (request: FastifyRequest, reply) => {
   }
 });
 // app.get("/", async (request, reply) => {return { message: "PesoRachar Server is running smoothly!" };});
-app.get('/', async(req, res) => {
+app.get("/", async(req, res) => {
   await initializeTelegramWebhook();
     res.send(`
         <!DOCTYPE html>
